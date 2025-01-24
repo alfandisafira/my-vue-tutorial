@@ -1,21 +1,23 @@
 <script setup>
-import MainButton from '@/components/MainButton.vue';
-import OptionComponent from './components/OptionComponent.vue';
-import CompotitionComponent from './components/CompotitionComponent.vue';
+// local register
+import MainButton from '@/components/MainButton.vue'
 
-const nameGuest = 'Alfandi';
+/**
+ * move to global
+ */
+// import OptionComponent from './components/OptionComponent.vue';
+// import CompotitionComponent from './components/CompotitionComponent.vue';
+
+const nameGuest = 'Alfandi'
 </script>
 
 <template>
-  <MainButton/>
-  <MainButton/>
-  <MainButton/>
-  <MainButton/>
+  <MainButton />
 
   <h1>Hello, {{ nameGuest }}</h1>
-  
-  <OptionComponent/>
-  <CompotitionComponent/>
+
+  <option-component />
+  <CompotitionComponent />
 </template>
 
 <style scoped></style>
