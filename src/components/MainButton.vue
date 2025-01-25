@@ -1,13 +1,23 @@
-<script setup></script>
+<script setup>
+
+// boolean
+const isDisabled = false;
+
+// bind all
+const buttonAttr = {
+  id: 'myButton',
+  class: 'my-button',
+  disabled: isDisabled
+}
+
+</script>
 
 <template>
-  <button>Button</button>
+  <button v-bind="buttonAttr">{{ buttonAttr.disabled ? 'Loading' : 'Submit' }}</button>
 </template>
 
 <style scoped>
 * {
-  background-color: red;
-  color: white;
   border-radius: 10px;
 }
 </style>
