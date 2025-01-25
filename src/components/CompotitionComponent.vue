@@ -1,7 +1,7 @@
 <script setup>
 import { ref, onMounted } from 'vue'
 
-// primitive type like: String, Number, Boolean 
+// primitive type like: String, Number, Boolean
 const count = ref(0)
 
 const increment = () => {
