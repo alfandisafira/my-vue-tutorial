@@ -1,15 +1,13 @@
 <script setup>
-
 // boolean
-const isDisabled = false;
+const isDisabled = false
 
 // bind all
 const buttonAttr = {
   id: 'myButton',
   class: 'my-button',
-  disabled: isDisabled
+  disabled: isDisabled,
 }
-
 </script>
 
 <template>

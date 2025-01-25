@@ -21,7 +21,7 @@ onMounted(() => {
   <div>
     <!-- non directive, using v-xxx -->
     <button v-on:click="decrement">-</button>
-    
+
     <button>{{ count }}</button>
 
     <!-- directive, using @ instead v-on -->
