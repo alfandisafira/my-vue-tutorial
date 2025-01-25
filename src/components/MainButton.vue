@@ -1,17 +1,18 @@
 <script setup>
-// boolean
-const isDisabled = false
-
-// bind all
-const buttonAttr = {
-  id: 'myButton',
-  class: 'my-button',
-  disabled: isDisabled,
-}
+const { title, disabled } = defineProps({
+  title: {
+    type: String,
+    default: 'Submit',
+  },
+  disabled: {
+    type: Boolean,
+    default: false,
+  },
+})
 </script>
 
 <template>
-  <button v-bind="buttonAttr">{{ buttonAttr.disabled ? 'Loading' : 'Submit' }}</button>
+  <button :disabled="disabled">{{ title }}</button>
 </template>
 
 <style scoped>

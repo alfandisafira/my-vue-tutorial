@@ -38,7 +38,9 @@ const greetingGuest = (name, gender) => {
 </script>
 
 <template>
-  <MainButton />
+  <MainButton :title="`Login`" />
+  <MainButton :title="`Logout`" />
+  <MainButton :disabled="true" />
 
   <!-- calling function -->
   <h1>{{ greetingGuest(nameGuest, 'M') }}</h1>
