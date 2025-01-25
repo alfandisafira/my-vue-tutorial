@@ -19,8 +19,12 @@ onMounted(() => {
 <template>
   <h6>Composition</h6>
   <div>
-    <button @click="decrement">-</button>
+    <!-- non directive, using v-xxx -->
+    <button v-on:click="decrement">-</button>
+    
     <button>{{ count }}</button>
+
+    <!-- directive, using @ instead v-on -->
     <button @click="increment">+</button>
   </div>
 </template>
