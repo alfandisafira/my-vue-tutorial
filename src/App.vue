@@ -1,47 +1,39 @@
 <script setup>
-import { ref, reactive, computed } from 'vue'
+import { reactive } from 'vue'
 
-const authors = reactive([
-  {
-    name: 'Soe Hok Gie',
-    books: ['Catatan Seorang Demonstran', 'Sekali Lagi'],
-  },
-  {
-    name: 'Buya HAMKA',
-    books: ['Tenggelamnya Kapal Van der Wijck', "Di Bawah Lindungan Ka'bah"],
-  },
-])
-
-// will be rendered every time
-// eventhought no change
-// const hasAuthor = () => {
-//   console.log(authors.length);
-//   return authors.length > 0 ? 'Yes' : 'No';
-// }
-
-// will be rendered if change
-const hasAuthor = computed(() => {
-  console.log(authors.length)
-  return authors.length > 0 ? 'Yes' : 'No'
+const authorSoe = reactive({
+  name: 'Soe Hok Gie',
+  books: ['Catatan Seorang Demonstran', 'Sekali Lagi'],
 })
 
-const removeAuthor = () => {
-  authors.pop()
-}
+const authorHamka = reactive({
+  name: 'Buya HAMKA',
+  books: ['Tenggelamnya Kapal Van der Wijck', "Di Bawah Lindungan Ka'bah"],
+})
 
-const count = ref(0)
-
-const increment = () => {
-  count.value++
+const removeAuthor = (name) => {
+  name.books.pop()
 }
 </script>
 
 <template>
-  <div>has author: {{ hasAuthor }}</div>
-  <button @click="removeAuthor">remove</button>
+  <div>
+    {{ authorSoe.name }}
+    <!-- will render 1 -->
+    <span v-if="authorSoe.books.length > 1">Has a books</span>
+    <span v-else-if="authorSoe.books.length == 1">Has a book</span>
+    <span v-else>Don't have book</span>
+  </div>
+  <button @click="removeAuthor(authorSoe)">remove</button>
 
-  <br />
-  <button @click="increment">{{ count }}</button>
+  <div>
+    {{ authorHamka.name }}
+    <!-- will render all but different display -->
+    <span v-show="authorHamka.books.length > 1">Has a books</span>
+    <span v-show="authorHamka.books.length == 1">Has a book</span>
+    <span v-show="authorHamka.books.length <= 0">Don't have book</span>
+  </div>
+  <button @click="removeAuthor(authorHamka)">remove</button>
 </template>
 
 <style scoped></style>
