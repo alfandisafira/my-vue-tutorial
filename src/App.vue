@@ -1,10 +1,9 @@
 <script setup>
-import MainButton from './components/MainButton.vue'
+import FormExample from './components/FormExample.vue'
 </script>
 
 <template>
-  <!-- send props not defined -->
-  <MainButton class="my-button" title="Cancel" @click="console.log('test')" />
+  <FormExample />
 </template>
 
 <style scoped></style>
