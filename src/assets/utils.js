@@ -1,4 +1,4 @@
-const todos = [
+export const todos = [
   {
     id: 1,
     todo: 'Do something nice for someone you care about',
@@ -181,4 +181,34 @@ const todos = [
   },
 ]
 
-export default todos
+import macbook from '@/assets/images_card/macbook.png'
+import iphone from '@/assets/images_card/iphone.png'
+import zfold from '@/assets/images_card/z-fold.png'
+import sony from '@/assets/images_card/sony.png'
+
+export const cardData = [
+  {
+    imgSource: macbook,
+    type: 'Macbook Pro',
+    merk: 'Apple',
+    price: '$2209.00',
+  },
+  {
+    imgSource: iphone,
+    type: 'Iphone Pro',
+    merk: 'Apple',
+    price: '$2009.00',
+  },
+  {
+    imgSource: zfold,
+    type: 'Galaxy Z Fold',
+    merk: 'Samsung',
+    price: '$1999.00',
+  },
+  {
+    imgSource: sony,
+    type: 'WH-1000XM5',
+    merk: 'Sony',
+    price: '$429.00',
+  },
+]
