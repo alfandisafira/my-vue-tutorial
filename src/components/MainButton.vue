@@ -1,4 +1,14 @@
 <script setup>
+// toggle props not defined
+defineOptions({
+  // inheritAttrs: false
+  inheritAttrs: true,
+})
+
+// handling props inherit
+import { useAttrs } from 'vue'
+const attrs = useAttrs()
+
 const { title, disabled } = defineProps({
   title: {
     type: String,
@@ -15,7 +25,10 @@ const { title, disabled } = defineProps({
 </script>
 
 <template>
-  <button @click="click" :disabled="disabled" class="button">{{ title }}</button>
+  <div>My Button</div>
+
+  <!-- put inherit in this attr -->
+  <button v-bind="attrs" @click="click" :disabled="disabled" class="button">{{ title }}</button>
 </template>
 
 <style scoped>
