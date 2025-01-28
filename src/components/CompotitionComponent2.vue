@@ -1,7 +1,5 @@
 <script setup>
-import { ref, onMounted, inject } from 'vue'
-
-const nameManager = inject('nameManager')
+import { ref, onMounted } from 'vue'
 
 // primitive type like: String, Number, Boolean
 const count = ref(0)
@@ -20,9 +18,6 @@ onMounted(() => {
 </script>
 
 <template>
-  <h1>{{ nameManager.name }}</h1>
-  <button @click="nameManager.updateName">Change Name</button>
-
   <h6>Composition</h6>
   <div>
     <!-- non directive, using v-xxx -->
